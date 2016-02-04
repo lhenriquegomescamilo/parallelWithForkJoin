@@ -69,6 +69,8 @@ public class TestQuickSortParallel {
 
 	private static void runWithForkJoin() {
 		QuickSortParallel rootTask = new QuickSortParallel(array, 0, array.length - 1);
+		
+		// Here return the quantity from core in your computer
 		ForkJoinPool poolThreads = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
 		poolThreads.invoke(rootTask);
 	}
